@@ -4,7 +4,7 @@ def hae_lentoaseman_tiedot(icao):
     conn = sqlite3.connect('lentokentatietokanta.db')
     c = conn.cursor()
 
-    c.execute("SELECT nimi, sijaintikunta FROM airport WHERE ident=?", (icao,))
+    c.execute("SELECT name FROM airport WHERE ident=?", (icao,))
     lentoasema = c.fetchone()
 
     conn.close()
